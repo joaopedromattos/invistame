@@ -1,20 +1,41 @@
 .contentMain {
-  height: 100%;
   justify-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 93vh;
+  grid-template-rows: 80vh;
   align-items: center;
 }
 
 .items {
-  width: 60%;
+  width: 70%;
+  height: 100%;
+  margin-top: 30px;
+  justify-items: center;
+  align-items: center;
 }
+
+
+.subItem {
+  justify-items: center;
+  align-items: center;
+  margin: auto auto;
+  width: 310px;
+}
+
+
 
 @media (max-width: 600px) {
   .contentMain {
     display: block;
     margin-left: 5%;
+  }
+
+  #logo {
+    width: 100px;
+  }
+
+  .subItem{
+    width: 100px;
   }
 
   .items {

@@ -67,19 +67,18 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function LandingPage() {
+export default function LandingPage(props) {
   const classes = useStyles();
 
   return (
     <div>
       <div className={classes.root}>
         <AppBar
-          style={{ height: "110px", lineHeight: "100%" }}
           position="static"
         >
           <Toolbar style={{ alignContent: "center" }}>
             <Typography className={classes.title} variant="h6" noWrap>
-              Material-UI
+              INVISTA.ME
             </Typography>
 
             <div className={classes.search}>
@@ -111,9 +110,34 @@ export default function LandingPage() {
       <div className={"contentMain"}>
         <div className={"items"}>
           <h1>Sua ponte para a ciência começa aqui...</h1>
+          <div className={"subItem"}>
+            <img id="logo" src="/images/logo.png" align="middle"></img>
+          </div>
+          
         </div>
         <div className={"items"}>
           <form className={classes.form} noValidate>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="nome"
+              label="Nome"
+              name="nome"
+              autoComplete="nome"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="sobrenome"
+              label="Sobrenome"
+              name="sobrenome"
+              autoComplete="sobrenome"
+            />
             <TextField
               variant="outlined"
               margin="normal"
@@ -123,7 +147,6 @@ export default function LandingPage() {
               label="Email"
               name="email"
               autoComplete="email"
-              autoFocus
             />
             <TextField
               variant="outlined"
@@ -148,59 +171,20 @@ export default function LandingPage() {
               autoComplete="current-password"
             />
 
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="CNPJ"
-              name="email"
-              autoComplete="email"
-            />
-
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Razão social"
-              name="email"
-              autoComplete="email"
-            />
-
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Nome fantasia"
-              name="email"
-              autoComplete="email"
-            />
-
-            <TextField
-              variant="outlined"
-              margin="normal"
-              fullWidth
-              id="email"
-              label="Telefone"
-              name="email"
-              autoComplete="email"
-            />
-
             <Button
               type="submit"
               fullWidth
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={() => {
+                props.history.push('/')
+              }}
             >
               Inscreva-se
-            </Button>
+            </Button > }>
           </form>
+          <p>Acessando como uma empresa? <a href="/entrepriseSignUp">Crie seu perfil empresarial clicando aqui!</a></p>
         </div>
       </div>
     </div>
