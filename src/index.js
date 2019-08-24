@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import EnterpriseSignUp from "./Components/EnterpriseSignUp/EnterpriseSignUp";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import ShowEnterprise from "./Components/ShowEnterprise/ShowEnterprise";
+import EnterpriseGrid from "./Components/EnterpriseGrid/EnterpriseGrid";
 
 import { createMuiTheme } from "@material-ui/core/styles";
 
@@ -31,8 +32,9 @@ const theme = createMuiTheme({
 ReactDOM.render(
   <Router>
     <Route path="/" exact component={LandingPage} />
-    <Route path="/entrepriseSignUp/" component={EnterpriseSignUp} />
+    <Route path="/enterpriseSignUp/" component={EnterpriseSignUp} />
     <Route path="/enterprise/:empresaId" component={ShowEnterprise} />
+    <Route path="/enterprises" component={EnterpriseGrid} />
   </Router>,
   document.getElementById("root")
 );

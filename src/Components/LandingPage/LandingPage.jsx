@@ -74,7 +74,7 @@ export default function LandingPage() {
     <div>
       <div className={classes.root}>
         <AppBar
-          style={{ height: "110px", lineHeight: "100%" }}
+          style={{ height: "110px", lineHeight: "80%" }}
           position="static"
         >
           <Toolbar style={{ alignContent: "center" }}>
