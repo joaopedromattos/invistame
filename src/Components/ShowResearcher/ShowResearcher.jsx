@@ -132,13 +132,29 @@ export default function ShowEnterprise(props) {
               Telefone: {value.telefone}
             </Typography>
             <Typography variant="subtitle2" align="justify" color="textPrimary">
-              Nome fantasia: {value.nomeFantasia}
+              Nome: {value.nomeFantasia}
             </Typography>
             <Typography variant="subtitle2" align="justify" color="textPrimary">
               Email: {value.email}
             </Typography>
+            <Typography variant="subtitle2" align="justify" color="textPrimary">
+              Curso: BCC
+            </Typography>
+            <Typography variant="subtitle2" align="justify" color="textPrimary">
+              Universidade: USP - São Carlos
+            </Typography>
             <br></br>
+            <Button>
+              Clique aqui para acessar o currículo do pesquisador
+            </Button>
             <br></br>
+            <Typography variant="h4" align="left" color="textPrimary">
+              Sobre mim
+            </Typography>
+            <Divider style={{ marginBottom: "2%", marginTop: "2%" }} />
+            <Typography variant="subtitle2" align="justify" color="textPrimary">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </Typography>
             <Button
                 onClick={() => {
                     props.history.push("/researchers");

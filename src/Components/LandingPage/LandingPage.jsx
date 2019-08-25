@@ -204,7 +204,11 @@ export default function LandingPage(props) {
           </form>
           <p>
             É uma empresa?&nbsp;
-            <a href="/enterpriseSignUp">
+            <a 
+                href="#"
+                onClick={() => {
+                    props.history.push("/enterpriseSignUp");
+                }}>
               Crie seu perfil empresarial clicando aqui!
             </a>
           </p>

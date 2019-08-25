@@ -100,7 +100,7 @@ export default function Researchers(props) {
         <div className={classes.search}>
           <FormControl fullWidth className={classes.margin}>
             <InputLabel htmlFor="adornment-value">
-              Pesquise um pesquisador
+              Busque um pesquisador
             </InputLabel>
             <Input
               id="adornment-value"

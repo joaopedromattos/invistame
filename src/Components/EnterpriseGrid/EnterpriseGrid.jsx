@@ -79,7 +79,7 @@ export default function EnterpriseGrid(props) {
       <div className={classes.search}>
         <FormControl fullWidth className={classes.margin}>
           <InputLabel htmlFor="adornment-value">
-            Pesquise uma empresa
+            Busque uma empresa
           </InputLabel>
           <Input
             id="adornment-value"
