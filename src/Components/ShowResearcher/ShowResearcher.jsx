@@ -139,7 +139,11 @@ export default function ShowEnterprise(props) {
             </Typography>
             <br></br>
             <br></br>
-            <Button href="/researchers" fullWidth>
+            <Button
+                onClick={() => {
+                    props.history.push("/researchers");
+                }}
+              >
               Voltar aos pesquisadores
             </Button>
           </Paper>
