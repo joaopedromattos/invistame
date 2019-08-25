@@ -14,15 +14,12 @@
   align-items: center;
 }
 
-
 .subItem {
   justify-items: center;
   align-items: center;
   margin: auto auto;
   width: 310px;
 }
-
-
 
 @media (max-width: 600px) {
   .contentMain {
@@ -34,7 +31,7 @@
     width: 100px;
   }
 
-  .subItem{
+  .subItem {
     width: 100px;
   }
 

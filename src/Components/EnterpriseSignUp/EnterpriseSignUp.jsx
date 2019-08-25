@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function EnterpriseSignUp() {
+export default function EnterpriseSignUp(props) {
   const classes = useStyles();
 
   return (
@@ -151,8 +151,14 @@ export default function EnterpriseSignUp() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={() => {
+              props.history.push("/researchers");
+            }}
           >
             Inscreva-se
+          </Button>
+          <Button href="/" fullWidth>
+            Voltar à Home
           </Button>
         </form>
       </div>

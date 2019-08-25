@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -13,6 +13,7 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import "./LandingPage.css";
 import TextField from "@material-ui/core/TextField";
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -50,9 +51,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(1, 10, 1, 1),
 
     width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: 120
-    }
+    
   },
   paper: {
     padding: theme.spacing(2),
@@ -69,17 +68,19 @@ const useStyles = makeStyles(theme => ({
 
 export default function LandingPage(props) {
   const classes = useStyles();
+  const [email, setEmail] = useState('');
+  
+
+  const emailRecord = (data) => {
+    setEmail(data.target.value)
+  }
+
+  
 
   return (
     <div>
       <div className={classes.root}>
-        <AppBar
-<<<<<<< HEAD
-          style={{ height: "110px", lineHeight: "80%" }}
-=======
->>>>>>> 6e291d9ce92fd4817ece976b2b37e8f3193532c8
-          position="static"
-        >
+        <AppBar position="static">
           <Toolbar style={{ alignContent: "center" }}>
             <Typography className={classes.title} variant="h6" noWrap>
               INVISTA.ME
@@ -93,11 +94,13 @@ export default function LandingPage(props) {
                   input: classes.inputInput
                 }}
                 inputProps={{ "aria-label": "search" }}
+                onChange={emailRecord}
               />
             </div>
             <div className={classes.search}>
               <InputBase
                 placeholder="Senha"
+                type="password"
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput
@@ -106,7 +109,20 @@ export default function LandingPage(props) {
               />
             </div>
             <div>
-              <Button color="inherit">Login</Button>
+              <Button
+                color="inherit"
+                className={classes.submit}
+                onClick={() => {
+                    if (email.search('empresa')){
+
+                        props.history.push("/enterprises");
+                    }else{
+                        props.history.push("/researchers");
+                    }
+                }}
+              >
+                Login
+              </Button>
             </div>
           </Toolbar>
         </AppBar>
@@ -117,7 +133,6 @@ export default function LandingPage(props) {
           <div className={"subItem"}>
             <img id="logo" src="/images/logo.png" align="middle"></img>
           </div>
-          
         </div>
         <div className={"items"}>
           <form className={classes.form} noValidate>
@@ -174,7 +189,6 @@ export default function LandingPage(props) {
               id="password"
               autoComplete="current-password"
             />
-
             <Button
               type="submit"
               fullWidth
@@ -182,13 +196,18 @@ export default function LandingPage(props) {
               color="primary"
               className={classes.submit}
               onClick={() => {
-                props.history.push('/')
+                props.history.push("/enterprises");
               }}
             >
               Inscreva-se
-            </Button > }>
+            </Button>
           </form>
-          <p>Acessando como uma empresa? <a href="/entrepriseSignUp">Crie seu perfil empresarial clicando aqui!</a></p>
+          <p>
+            É uma empresa?&nbsp;
+            <a href="/enterpriseSignUp">
+              Crie seu perfil empresarial clicando aqui!
+            </a>
+          </p>
         </div>
       </div>
     </div>

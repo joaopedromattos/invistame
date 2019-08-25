@@ -63,7 +63,7 @@ const lerolero = [
 export default function ShowEnterprise(props) {
   const classes = useStyles();
   let { value, image, index } = props.history.location.state;
-  let aux = '';
+  let aux = "";
 
   //Gustavo
   const [search, setValues] = useState({
@@ -82,13 +82,13 @@ export default function ShowEnterprise(props) {
     setOpen(true);
   };
 
-  
-
-  const addText = (e) => {
+  const addText = e => {
     if (e.key === "Enter") {
       var node = document.createElement("P");
-      var textnode = document.createTextNode("Você: " + document.querySelector("[name='nome']").value);
-      node.appendChild(textnode); 
+      var textnode = document.createTextNode(
+        "Você: " + document.querySelector("[name='nome']").value
+      );
+      node.appendChild(textnode);
       document.getElementById("msg").appendChild(node);
       //value.razaoSocial += aux;
       document.querySelector("[name='nome']").value = "";
@@ -122,21 +122,11 @@ export default function ShowEnterprise(props) {
         <Grid item xs={12} sm={8}>
           <Paper className={classes.paper}>
             <Typography variant="h4" align="left" color="textPrimary">
-              Descrição
+              Dados gerais do pesquisador
             </Typography>
             <Divider style={{ marginBottom: "2%", marginTop: "2%" }} />
             <Typography variant="subtitle2" align="justify" color="textPrimary">
-              {lerolero[index % lerolero.length]}
-            </Typography>
-            <br></br>
-            <br></br>
-            <br></br>
-            <Typography variant="h4" align="left" color="textPrimary">
-              Dados gerais da empresa
-            </Typography>
-            <Divider style={{ marginBottom: "2%", marginTop: "2%" }} />
-            <Typography variant="subtitle2" align="justify" color="textPrimary">
-              CNPJ: {value.cnpj}
+              CPF: {value.CPF}
             </Typography>
             <Typography variant="subtitle2" align="justify" color="textPrimary">
               Telefone: {value.telefone}
@@ -149,8 +139,8 @@ export default function ShowEnterprise(props) {
             </Typography>
             <br></br>
             <br></br>
-            <Button href="/enterprises" fullWidth>
-              Voltar às empresas
+            <Button href="/researchers" fullWidth>
+              Voltar aos pesquisadores
             </Button>
           </Paper>
         </Grid>
@@ -195,7 +185,7 @@ export default function ShowEnterprise(props) {
               label=""
               name="nome"
               autoFocus
-              onKeyDown={(e) => addText(e)}
+              onKeyDown={e => addText(e)}
             />
           </span>
         }

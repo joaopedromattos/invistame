@@ -8,16 +8,19 @@ import EnterpriseSignUp from "./Components/EnterpriseSignUp/EnterpriseSignUp";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import ShowEnterprise from "./Components/ShowEnterprise/ShowEnterprise";
 import EnterpriseGrid from "./Components/EnterpriseGrid/EnterpriseGrid";
-
+import Researchers from "./Components/Researchers/Researchers";
+import ShowResearcher from "./Components/ShowResearcher/ShowResearcher";
 import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from '@material-ui/styles';
+
 
 const theme = createMuiTheme({
   palette: {
     primary: {
       // light: will be calculated from palette.primary.main,
-      main: "#ff4400"
+      main: "#ff8000",
       // dark: will be calculated from palette.primary.main,
-      // contrastText: will be calculated to contrast with palette.primary.main
+      contrastText: "#ffffff"
     },
     secondary: {
       light: "#0066ff",
@@ -31,10 +34,14 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <Router>
+      <ThemeProvider theme={theme}>
     <Route path="/" exact component={LandingPage} />
     <Route path="/enterpriseSignUp/" component={EnterpriseSignUp} />
-    <Route path="/enterprise/:empresaId" component={ShowEnterprise} />
+    <Route path="/enterprise/" component={ShowEnterprise} />
     <Route path="/enterprises" component={EnterpriseGrid} />
+    <Route path="/researchers" component={Researchers} />
+    <Route path="/researcher" component={ShowResearcher} />
+    </ThemeProvider>
   </Router>,
   document.getElementById("root")
 );
